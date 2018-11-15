@@ -1,2 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Deepak Ramanath - Python</title><link href="https://deepakramanath.github.io/" rel="alternate"></link><link href="https://deepakramanath.github.io/feeds/python.atom.xml" rel="self"></link><id>https://deepakramanath.github.io/</id><updated>2010-12-03T10:20:00+11:00</updated><entry><title>My First Review</title><link href="https://deepakramanath.github.io/my-first-review.html" rel="alternate"></link><published>2010-12-03T10:20:00+11:00</published><updated>2010-12-03T10:20:00+11:00</updated><author><name>Deepak Ramanath</name></author><id>tag:deepakramanath.github.io,2010-12-03:/my-first-review.html</id><summary type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</content></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Deepak Ramanath - Python</title><link href="https://deepakramanath.github.io/" rel="alternate"></link><link href="https://deepakramanath.github.io/feeds/python.atom.xml" rel="self"></link><id>https://deepakramanath.github.io/</id><updated>2010-12-03T10:20:00+11:00</updated><entry><title>Prime Numbers using Python</title><link href="https://deepakramanath.github.io/prime-numbers-using-python.html" rel="alternate"></link><published>2010-12-03T10:20:00+11:00</published><updated>2010-12-03T10:20:00+11:00</updated><author><name>Deepak Ramanath</name></author><id>tag:deepakramanath.github.io,2010-12-03:/prime-numbers-using-python.html</id><summary type="html">&lt;p&gt;Generating Prime Numbers using Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This project can be found at the &lt;a href="https://github.com/deepakramanath/Prime-numbers"&gt;GitHub&lt;/a&gt; repository, including the &lt;a href="http://nbviewer.ipython.org/github/deepakramanath/Prime-numbers/blob/master/Prime-numbers.ipynb"&gt;IPython&lt;/a&gt; notebook.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Here, we write a Python program to generate a list of Prime numbers up to a given number (&lt;code&gt;n&lt;/code&gt;) and further evaluate the Prime factors for any given number. Although here the aim is not to develop an algorithm for &lt;a href="https://en.wikipedia.org/wiki/Generating_primes"&gt;prime seive&lt;/a&gt;, rather use trial division to obtain the list. Once the Prime list is generated, &lt;a href="https://en.wikipedia.org/wiki/Prime_factor"&gt;Prime factors&lt;/a&gt; are subsequently evaluated.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Python program to calculate Prime numbers and subsequently Prime Factors&lt;/span&gt;
+
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;Usage: Prime-numbers.py&lt;/span&gt;
+
+&lt;span class="sd"&gt;Generates a sequence of Prime numbers up to the given number (n)&lt;/span&gt;
+&lt;span class="sd"&gt;and also generates Prime factors for any user given number&lt;/span&gt;
+
+&lt;span class="sd"&gt;At prompt, enter only numbers&lt;/span&gt;
+
+&lt;span class="sd"&gt;Options&lt;/span&gt;
+&lt;span class="sd"&gt;-------&lt;/span&gt;
+
+&lt;span class="sd"&gt;-h or help      Displays this message&lt;/span&gt;
+
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We fist put a doc message followed by importing few modules. Here we also import the &lt;code&gt;numpy&lt;/code&gt; module so that we can be a little quick when we iterate through the sequence of numbers for the trial division as well as for estimating the prime factors.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;primeNumbers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;count_zero&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
+                &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+                    &lt;span class="n"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;
+                    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;rem&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                        &lt;span class="n"&gt;count_zero&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;count_zero&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+                        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;count_zero&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                            &lt;span class="k"&gt;break&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;count_zero&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="n"&gt;primeNumbers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;primeNumbers&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is the first function in our Python code which generates the Prime number list. As we see, we first iterate through a &lt;code&gt;numpy&lt;/code&gt; array to check if the given number (&lt;code&gt;n&lt;/code&gt;) is greater than 2. If this condition is satisfied, we again iterate up to &lt;code&gt;n&lt;/code&gt;, where we carry out the trial division and check for the reminders. Any Prime number is a natural number that is divisible by 1 and itself producing no other positive divisors. This would mean that when we divide a number, &lt;code&gt;n&lt;/code&gt; by a sequence of numbers from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;n&lt;/code&gt;, we should obtain only two zeros as reminders, one from  the number &lt;code&gt;1&lt;/code&gt; and the other from &lt;code&gt;n&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;code&gt;prime&lt;/code&gt; function above, after evaluating the reminder with each division, we keep a count of the reminders via the variable &lt;code&gt;count_zero&lt;/code&gt;. Since we know that Prime numbers will have only two divisors, we break the loop as soon as we see any number having more than three  3 zero reminders. For those we have only two zero reminders, we append to the &lt;code&gt;primeNumbers&lt;/code&gt; list.&lt;/p&gt;</content><category term="python"></category><category term="prime"></category><category term="numner"></category><category term="factors"></category></entry></feed>
