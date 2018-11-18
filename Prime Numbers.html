@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://deepakramanath.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Deepak Ramanath Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Deepak Ramanath" />
+<meta name="description" content="Python program to obtain Prime numbers" />
+<meta name="keywords" content="python, prime, numner, factors">
+
+<meta property="og:site_name" content="Deepak Ramanath"/>
+<meta property="og:title" content=""/>
+<meta property="og:description" content="Python program to obtain Prime numbers"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://deepakramanath.github.io/Prime Numbers.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-11-21 11:00:00+11:00"/>
+<meta property="article:modified_time" content="2015-11-21 11:00:00+11:00"/>
+<meta property="article:author" content="https://deepakramanath.github.io/author/deepak-ramanath.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="prime"/>
+<meta property="article:tag" content="numner"/>
+<meta property="article:tag" content="factors"/>
+<meta property="og:image" content="">
+
+  <title>Deepak Ramanath &ndash; </title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://deepakramanath.github.io">
+        <img src="https://deepakramanath.github.io/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://deepakramanath.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="https://deepakramanath.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://deepakramanath.github.io/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="#" target="_blank">Python | Linux | Ansible</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://au.linkedin.com/in/deepakramanath" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/deepakramanath" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/deepakramanath" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/deepakramanath" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://deepakramanath.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://deepakramanath.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="Prime Numbers"></h1>
+    <p>
+          Posted on Sat 21 November 2015 in <a href="https://deepakramanath.github.io/category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <div class="section" id="prime-numbers-using-python">
+<h2>Prime Numbers Using Python</h2>
+<p>This project can be found at the <a class="reference external" href="https://github.com/deepakramanath/Prime-numbers">GitHub</a> repository, including the <a class="reference external" href="http://nbviewer.ipython.org/github/deepakramanath/Prime-numbers/blob/master/Prime-numbers.ipynb">IPython</a> notebook.</p>
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+<p>Here, we write a Python program to generate a list of Prime numbers up to a given number (<cite>n</cite>) and further evaluate the Prime factors for any given number. Although here the aim is not to develop an algorithm for <a class="reference external" href="https://en.wikipedia.org/wiki/Generating_primes">prime seive</a>, rather use trial division to obtain the list. Once the Prime list is generated, <a class="reference external" href="https://en.wikipedia.org/wiki/Prime_factor">Prime factors</a> are subsequently evaluated.</p>
+<div class="highlight"><pre><span></span>&quot;&quot;&quot;
+Usage: Prime-numbers.py
+
+Generates a sequence of Prime numbers up to the given number (n)
+and also generates Prime factors for any user given number
+
+At prompt, enter only numbers
+
+Options
+-------
+
+-h or help      Displays this message
+
+&quot;&quot;&quot;
+
+
+from sys import argv, exit
+import numpy as np
+</pre></div>
+<p>We fist put a doc message followed by importing few modules. Here we also import the <cite>numpy</cite> module so that we can be a little quick when we iterate through the sequence of numbers for the trial division as well as for estimating the prime factors.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prime</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">primeNumbers</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+         <span class="n">count_zero</span> <span class="o">=</span> <span class="mi">0</span>
+         <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+             <span class="n">value</span> <span class="o">=</span> <span class="n">i</span>
+             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                 <span class="n">rem</span> <span class="o">=</span> <span class="n">value</span> <span class="o">%</span> <span class="n">j</span>
+                 <span class="k">if</span> <span class="n">rem</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                     <span class="n">count_zero</span> <span class="o">=</span> <span class="n">count_zero</span> <span class="o">+</span> <span class="mi">1</span>
+                     <span class="k">if</span> <span class="n">count_zero</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                         <span class="k">break</span>
+         <span class="k">if</span> <span class="n">count_zero</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+             <span class="n">primeNumbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">primeNumbers</span>
+</pre></div>
+<p>This is the first function in our Python code which generates the Prime number list. As we see, we first iterate through a <cite>numpy</cite> array to check if the given number (<cite>n</cite>) is greater than 2. If this condition is satisfied, we again iterate up to <cite>n</cite>, where we carry out the trial division and check for the reminders. Any Prime number is a natural number that is divisible by 1 and itself producing no other positive divisors. This would mean that when we divide a number, <cite>n</cite> by a sequence of numbers from <cite>1</cite> to <cite>n</cite>, we should obtain only two zeros as reminders, one from  the number <cite>1</cite> and the other from <cite>n</cite>.</p>
+<p>In the <cite>prime</cite> function above, after evaluating the reminder with each division, we keep a count of the reminders via the variable <cite>count_zero</cite>. Since we know that Prime numbers will have only two divisors, we break the loop as soon as we see any number having more than three  3 zero reminders. For those we have only two zero reminders, we append to the <cite>primeNumbers</cite> list.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factor</span><span class="p">(</span><span class="n">facNum</span><span class="p">):</span>
+    <span class="n">primeFactors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pN</span> <span class="ow">in</span> <span class="n">primeNumbersArray</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">facNum</span> <span class="o">%</span> <span class="n">pN</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">facValue</span> <span class="o">=</span> <span class="n">facNum</span> <span class="o">/</span> <span class="n">pN</span>
+                <span class="n">primeFactors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pN</span><span class="p">)</span>
+                <span class="n">facNum</span> <span class="o">=</span> <span class="n">facValue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+<span class="k">return</span> <span class="n">primeFactors</span>
+</pre></div>
+<p>In this function, we evaluate the prime factors for any given number. In order to obtain the Prime factors, we first need a list of Prime numbers and that's what the former function does in this code. Now, in this function we basically iterate through the Prime number list and check if the user given number is divisible with a reminder of 0. If this condition is true, then a subsequent factorising is carried out while appending the factors to another list.</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+    <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<p>Here, we check for the length of the initial arguments given for printing usage and help messages. Note that these three lines are commented out in the Ipython Notebook to avoid Ipython raising an exception as it tries to quit.</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;Enter the number: &quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Error: Enter only numbers&quot;</span>
+        <span class="k">continue</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">number</span><span class="p">:</span> <span class="mi">1000</span>
+</pre></div>
+<p>Within the <cite>while</cite> loop, we prompt the user to enter the number <cite>n</cite> for generating the Prime numbers. The <cite>try</cite> and <cite>except</cite> will ensure that user enters only numbers.</p>
+<div class="highlight"><pre><span></span><span class="n">primeNumbers</span> <span class="o">=</span> <span class="n">prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;List of Prime Numbers up to </span><span class="si">%d</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">primeNumbers</span>
+<span class="n">primeNumbersArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">primeNumbers</span><span class="p">)</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">of</span> <span class="n">Prime</span> <span class="n">Numbers</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">1000</span><span class="p">:</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">131</span><span class="p">,</span> <span class="mi">137</span><span class="p">,</span> <span class="mi">139</span><span class="p">,</span> <span class="mi">149</span><span class="p">,</span> <span class="mi">151</span><span class="p">,</span> <span class="mi">157</span><span class="p">,</span> <span class="mi">163</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">179</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">197</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">211</span><span class="p">,</span> <span class="mi">223</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">257</span><span class="p">,</span> <span class="mi">263</span><span class="p">,</span> <span class="mi">269</span><span class="p">,</span> <span class="mi">271</span><span class="p">,</span> <span class="mi">277</span><span class="p">,</span> <span class="mi">281</span><span class="p">,</span> <span class="mi">283</span><span class="p">,</span> <span class="mi">293</span><span class="p">,</span> <span class="mi">307</span><span class="p">,</span> <span class="mi">311</span><span class="p">,</span> <span class="mi">313</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">331</span><span class="p">,</span> <span class="mi">337</span><span class="p">,</span> <span class="mi">347</span><span class="p">,</span> <span class="mi">349</span><span class="p">,</span> <span class="mi">353</span><span class="p">,</span> <span class="mi">359</span><span class="p">,</span> <span class="mi">367</span><span class="p">,</span> <span class="mi">373</span><span class="p">,</span> <span class="mi">379</span><span class="p">,</span> <span class="mi">383</span><span class="p">,</span> <span class="mi">389</span><span class="p">,</span> <span class="mi">397</span><span class="p">,</span> <span class="mi">401</span><span class="p">,</span> <span class="mi">409</span><span class="p">,</span> <span class="mi">419</span><span class="p">,</span> <span class="mi">421</span><span class="p">,</span> <span class="mi">431</span><span class="p">,</span> <span class="mi">433</span><span class="p">,</span> <span class="mi">439</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="mi">449</span><span class="p">,</span> <span class="mi">457</span><span class="p">,</span> <span class="mi">461</span><span class="p">,</span> <span class="mi">463</span><span class="p">,</span> <span class="mi">467</span><span class="p">,</span> <span class="mi">479</span><span class="p">,</span> <span class="mi">487</span><span class="p">,</span> <span class="mi">491</span><span class="p">,</span> <span class="mi">499</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">509</span><span class="p">,</span> <span class="mi">521</span><span class="p">,</span> <span class="mi">523</span><span class="p">,</span> <span class="mi">541</span><span class="p">,</span> <span class="mi">547</span><span class="p">,</span> <span class="mi">557</span><span class="p">,</span> <span class="mi">563</span><span class="p">,</span> <span class="mi">569</span><span class="p">,</span> <span class="mi">571</span><span class="p">,</span> <span class="mi">577</span><span class="p">,</span> <span class="mi">587</span><span class="p">,</span> <span class="mi">593</span><span class="p">,</span> <span class="mi">599</span><span class="p">,</span> <span class="mi">601</span><span class="p">,</span> <span class="mi">607</span><span class="p">,</span> <span class="mi">613</span><span class="p">,</span> <span class="mi">617</span><span class="p">,</span> <span class="mi">619</span><span class="p">,</span> <span class="mi">631</span><span class="p">,</span> <span class="mi">641</span><span class="p">,</span> <span class="mi">643</span><span class="p">,</span> <span class="mi">647</span><span class="p">,</span> <span class="mi">653</span><span class="p">,</span> <span class="mi">659</span><span class="p">,</span> <span class="mi">661</span><span class="p">,</span> <span class="mi">673</span><span class="p">,</span> <span class="mi">677</span><span class="p">,</span> <span class="mi">683</span><span class="p">,</span> <span class="mi">691</span><span class="p">,</span> <span class="mi">701</span><span class="p">,</span> <span class="mi">709</span><span class="p">,</span> <span class="mi">719</span><span class="p">,</span> <span class="mi">727</span><span class="p">,</span> <span class="mi">733</span><span class="p">,</span> <span class="mi">739</span><span class="p">,</span> <span class="mi">743</span><span class="p">,</span> <span class="mi">751</span><span class="p">,</span> <span class="mi">757</span><span class="p">,</span> <span class="mi">761</span><span class="p">,</span> <span class="mi">769</span><span class="p">,</span> <span class="mi">773</span><span class="p">,</span> <span class="mi">787</span><span class="p">,</span> <span class="mi">797</span><span class="p">,</span> <span class="mi">809</span><span class="p">,</span> <span class="mi">811</span><span class="p">,</span> <span class="mi">821</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">827</span><span class="p">,</span> <span class="mi">829</span><span class="p">,</span> <span class="mi">839</span><span class="p">,</span> <span class="mi">853</span><span class="p">,</span> <span class="mi">857</span><span class="p">,</span> <span class="mi">859</span><span class="p">,</span> <span class="mi">863</span><span class="p">,</span> <span class="mi">877</span><span class="p">,</span> <span class="mi">881</span><span class="p">,</span> <span class="mi">883</span><span class="p">,</span> <span class="mi">887</span><span class="p">,</span> <span class="mi">907</span><span class="p">,</span> <span class="mi">911</span><span class="p">,</span> <span class="mi">919</span><span class="p">,</span> <span class="mi">929</span><span class="p">,</span> <span class="mi">937</span><span class="p">,</span> <span class="mi">941</span><span class="p">,</span> <span class="mi">947</span><span class="p">,</span> <span class="mi">953</span><span class="p">,</span> <span class="mi">967</span><span class="p">,</span> <span class="mi">971</span><span class="p">,</span> <span class="mi">977</span><span class="p">,</span> <span class="mi">983</span><span class="p">,</span> <span class="mi">991</span><span class="p">,</span> <span class="mi">997</span><span class="p">]</span>
+</pre></div>
+<p>At this point, we call the <cite>prime</cite> function and store the list as a <cite>numpy</cite> array which will be later used to find the prime factors.</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">pFNum</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Now enter any other number to obtain the Prime Factors: &quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">pFNumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pFNum</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Error: Enter only numbers&quot;</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">Now</span> <span class="n">enter</span> <span class="nb">any</span> <span class="n">other</span> <span class="n">number</span> <span class="n">to</span> <span class="n">obtain</span> <span class="n">the</span> <span class="n">Prime</span> <span class="n">Factors</span><span class="p">:</span> <span class="mi">5611</span>
+</pre></div>
+<p>This second <cite>while</cite> loop is used to get the number from the user to evaluate the prime factors. Here, we provide a 8 bit semiprime so that when factorised, we get back the Prime numbes which when multiplied gives back the semiprime. This can be verified from this <a class="reference external" href="http://asecuritysite.com/encryption/random3?val=8">link</a>.</p>
+<p>Similar to the previous <cite>while</cite> loop it is ensured that the user enters only numbers with the <cite>try</cite> and <cite>except</cite>.</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">pFNumber</span> <span class="ow">in</span> <span class="n">primeNumbersArray</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Its a Prime!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">primeFactors</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">pFNumber</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">primeFactors</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Your Prime Numbers list is too short to obtain the prime factors&quot;</span><span class="p">,</span> <span class="s2">&quot;Regenerate the Prime Numbers list&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;The Prime Factors for </span><span class="si">%d</span><span class="s2"> are:&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">pFNumber</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">primeFactors</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Prime</span> <span class="n">Factors</span> <span class="k">for</span> <span class="mi">5611</span> <span class="n">are</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">181</span><span class="p">]</span>
+</pre></div>
+<p>Here, the number provided by the user to determine the Prime factor is first checked against the Prime number list. This is followed by printing the Prime factors.</p>
+</div>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://deepakramanath.github.io/tag/python.html">python</a>
+      <a href="https://deepakramanath.github.io/tag/prime.html">prime</a>
+      <a href="https://deepakramanath.github.io/tag/numner.html">numner</a>
+      <a href="https://deepakramanath.github.io/tag/factors.html">factors</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2018</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Deepak Ramanath ",
+  "url" : "https://deepakramanath.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
