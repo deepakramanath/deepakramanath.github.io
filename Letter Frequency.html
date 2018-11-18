@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://deepakramanath.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Deepak Ramanath Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Deepak Ramanath" />
+<meta name="description" content="Here, we look at parsing a large piece of text file to analyze the charter frequency using Python or, letter frequency. Click Continue reading to know more." />
+<meta name="keywords" content="python, letter-frequency">
+
+<meta property="og:site_name" content="Deepak Ramanath"/>
+<meta property="og:title" content=""/>
+<meta property="og:description" content="Here, we look at parsing a large piece of text file to analyze the charter frequency using Python or, letter frequency. Click Continue reading to know more."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://deepakramanath.github.io/Letter Frequency.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-10-30 15:00:00+11:00"/>
+<meta property="article:modified_time" content="2015-10-30 15:00:00+11:00"/>
+<meta property="article:author" content="https://deepakramanath.github.io/author/deepak-ramanath.html">
+<meta property="article:section" content="Python Codes"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="letter-frequency"/>
+<meta property="og:image" content="">
+
+  <title>Deepak Ramanath &ndash; </title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://deepakramanath.github.io">
+        <img src="https://deepakramanath.github.io/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://deepakramanath.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="https://deepakramanath.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://deepakramanath.github.io/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="#" target="_blank">Python | Linux | Ansible</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://au.linkedin.com/in/deepakramanath" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/deepakramanath" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/deepakramanath" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/deepakramanath" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://deepakramanath.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://deepakramanath.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="Letter Frequency"></h1>
+    <p>
+          Posted on Fri 30 October 2015 in <a href="https://deepakramanath.github.io/category/python-codes.html">Python Codes</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <div class="section" id="letter-frequency-using-python">
+<h2>Letter Frequency using Python</h2>
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+<p>In this program, we look at parsing a large piece of a text file and analysing the character frequency using Python. This is typically called as the letter frequency. <a class="reference external" href="https://en.wikipedia.org/wiki/Letter_frequency">See this detailed explanation</a>. After parsing through the text, we store each alphabet and its respective count in the form of a Python dictionary. Subsequently, we sort the dictionary both in alphabetical order as well as count order. These are then plotted as a bar chart which gives an idea about the frequency of the character in the English language written text.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
+<p>Here, we import two modules, namely, <cite>string</cite> and <cite>matplotlib</cite>. The <cite>string</cite> module has a number of constants and classes which can be used to obtain the required ASCII characters. These characters can then be used as strings to check against the text that is to be parsed. For example, the text file may contain characters such as <cite>(, -, &quot;, ., ~</cite> which is of no interest for generating the letter frequency since only the alphabets are taken into account.</p>
+<div class="highlight"><pre><span></span><span class="n">pd</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span>
+<span class="n">lettersDict</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+<p>In the above line, we combine two <cite>string</cite> classes to obtain a single variable <cite>pd</cite> which contains both the punctuation and the digits characters. This is followed by creating an empty dictionary which will  later be used to store the values and counts of the letters.</p>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">textfile</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">textfile</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">pd</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot; &quot;</span> <span class="ow">in</span> <span class="n">letter</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">letter</span><span class="p">:</span>
+                <span class="n">lettersDict</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="n">lettersDict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+ <span class="n">Enter</span> <span class="n">the</span> <span class="nb">file</span> <span class="n">name</span><span class="p">:</span> <span class="n">intro</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+<p>The text file for parsing is opened and processed line by line using the <cite>for</cite> loop. Firstly, the leading and trailing spaces are removed using the <cite>strip()</cite> method and then using the <cite>translate</cite> method, the text is translated excluding the strings present in the variable <cite>pd</cite>. The translated text now contains only the alphabets which are then converted to a list. At this point, the code has not checked for the presence of any spaces or tabs in the text. We check this prior to storing letters in the dictionary. Note that the <cite>get</cite> method is used to check the empty dictionary and subsequently update the keys and counts respectively.</p>
+<div class="highlight"><pre><span></span><span class="n">lettersCount</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">countLetters</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">totalCount</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+<p>A few empty lists are initialised for storing key and values from the dictionary as tuples and then sorting out in the required order. Also, we initiate a variable <cite>totalcount</cite> for storing the total number of all the letters. This will be later used to calculate the percentage of every letter.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">lettersDict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">lettersCount</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">l</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+    <span class="n">countLetters</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="n">l</span><span class="p">))</span>
+    <span class="n">totalCount</span> <span class="o">=</span> <span class="n">totalCount</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+<p>Here, we append the list with the tuples having key value pair. This consequently becomes a list of tuples and, therefore, we can change the order. The <cite>lettersCount</cite> list contains the key-value pairs, while the <cite>countLetters</cite> has value-key pairs.</p>
+<div class="highlight"><pre><span></span><span class="n">lettersCount</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">countLetters</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+<p>The sorting can now be carried out on both the lists that contain tuples. The first one sorts based on the keys while the second is sorted based on the value.</p>
+<div class="highlight"><pre><span></span><span class="n">relCount</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">relCountReverse</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labelsReverse</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<p>Again, we initialise some lists that will be used for the purpose of plotting.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">L</span><span class="p">,</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">lettersCount</span><span class="p">:</span>
+    <span class="n">relCount</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="n">totalCount</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">Cr</span><span class="p">,</span> <span class="n">Lr</span> <span class="ow">in</span> <span class="n">countLetters</span><span class="p">:</span>
+    <span class="n">relCountReverse</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">Cr</span><span class="p">)</span> <span class="o">/</span> <span class="n">totalCount</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">labelsReverse</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Lr</span><span class="p">)</span>
+</pre></div>
+<p>The above two loops evaluate the relative counts (percentage) and append the characters into appropriate lists. However, the order is changed between the two lists as it becomes apparent when these are plotted.</p>
+<div class="highlight"><pre><span></span><span class="c1"># alphabetical order</span>
+<span class="n">figure1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mf">1.25</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Text frequency in percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lettersCount</span><span class="p">)),</span> <span class="n">relCount</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lettersCount</span><span class="p">)),</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Alphabets&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+</pre></div>
+<div class="figure">
+<img alt="Text frequency in percentrage" src="images/letter-frequency_18_1.png" />
+</div>
+<div class="highlight"><pre><span></span><span class="c1"># decending order of percentage</span>
+<span class="n">figure2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Text frequency in percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">countLetters</span><span class="p">)),</span> <span class="n">relCountReverse</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">countLetters</span><span class="p">)),</span> <span class="n">labelsReverse</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Alphabets&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+</pre></div>
+<div class="figure">
+<img alt="Text frequency in percentage" src="images/letter-frequency_19_1.png" />
+</div>
+</div>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://deepakramanath.github.io/tag/python.html">python</a>
+      <a href="https://deepakramanath.github.io/tag/letter-frequency.html">letter-frequency</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2018</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Deepak Ramanath ",
+  "url" : "https://deepakramanath.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
