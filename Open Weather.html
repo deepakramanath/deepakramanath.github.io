@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://deepakramanath.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Deepak Ramanath Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Deepak Ramanath" />
+<meta name="description" content="Here OpenWeather API is explored to access weather information and parsing the JSON data using Python. Click Continue reading to know more and view the Python." />
+<meta name="keywords" content="python, JSON, OpenWeather, API">
+
+<meta property="og:site_name" content="Deepak Ramanath"/>
+<meta property="og:title" content=""/>
+<meta property="og:description" content="Here OpenWeather API is explored to access weather information and parsing the JSON data using Python. Click Continue reading to know more and view the Python."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://deepakramanath.github.io/Open Weather.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2015-12-08 14:00:00+11:00"/>
+<meta property="article:modified_time" content="2015-12-08 14:00:00+11:00"/>
+<meta property="article:author" content="https://deepakramanath.github.io/author/deepak-ramanath.html">
+<meta property="article:section" content="Python Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="JSON"/>
+<meta property="article:tag" content="OpenWeather"/>
+<meta property="article:tag" content="API"/>
+<meta property="og:image" content="">
+
+  <title>Deepak Ramanath &ndash; </title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://deepakramanath.github.io">
+        <img src="https://deepakramanath.github.io/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://deepakramanath.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="https://deepakramanath.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://deepakramanath.github.io/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="#" target="_blank">Python | Linux | Ansible</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://au.linkedin.com/in/deepakramanath" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/deepakramanath" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/deepakramanath" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/deepakramanath" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://deepakramanath.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://deepakramanath.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="Open Weather"></h1>
+    <p>
+          Posted on Tue 08 December 2015 in <a href="https://deepakramanath.github.io/category/python-projects.html">Python Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <div class="section" id="api-call-to-openweather-and-parsing-json-using-python">
+<h2>API call to OpenWeather and Parsing JSON using Python</h2>
+<p>This project can be found at the <a class="reference external" href="https://github.com/deepakramanath/Python-OpenWeather">GitHub</a> repository, including the <a class="reference external" href="http://nbviewer.ipython.org/github/deepakramanath/Python-OpenWeather/blob/master/Python-OpenWeather.ipynb">IPython</a> notebook.</p>
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+<p>This is a Python program which uses <a class="reference external" href="http://openweathermap.org/">OpenWeather</a> API to access weather information and subsequently parse the JSON data. Note that to access the API in this exercise, you need to have a valid API key, which can be obtained from creating an account at <a class="reference external" href="http://openweathermap.org/">OpenWeather</a>. With the free account, the <a class="reference external" href="http://openweathermap.org/">OpenWeather</a> allows you to have 600 API calls/10 minutes. Also note that a list of city IDs in JSON format is needed for this to work. This file is included in the github repository, otherwise it can be found at this <a class="reference external" href="http://bulk.openweathermap.org/sample/city.list.json.gz">link</a>.</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Usage: Python-OpenWeather.py</span>
+
+<span class="sd">Makes API calls to OpenWeather and retrievs JSON data</span>
+<span class="sd">Parses JSON data using JSON library</span>
+
+<span class="sd">List of city ID in JSON format can be obtained from</span>
+<span class="sd">http://bulk.openweathermap.org/sample/</span>
+
+<span class="sd">Options</span>
+<span class="sd">_______</span>
+
+<span class="sd">-h or help  Displays this message</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+   <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">city</span><span class="p">():</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Enter city name: &#39;</span><span class="p">)</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">city</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s2">&quot;Retrieving weather information for </span><span class="si">%s</span><span class="s2"> .....&quot;</span> <span class="o">%</span> <span class="n">city</span>
+
+<span class="k">return</span> <span class="n">city</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">citysearch</span><span class="p">(</span><span class="n">city</span><span class="p">):</span>
+    <span class="n">listCities</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;city.list.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cityList</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">cityList</span><span class="p">:</span>
+            <span class="n">cityJSON</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+            <span class="n">cityName</span> <span class="o">=</span> <span class="n">cityJSON</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+            <span class="n">cityName</span> <span class="o">=</span> <span class="n">cityName</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">cityName</span> <span class="o">==</span> <span class="n">city</span><span class="p">:</span>
+                <span class="n">searchCity</span> <span class="o">=</span> <span class="n">cityJSON</span>
+                <span class="n">listCities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">searchCity</span><span class="p">)</span>
+
+ <span class="n">cityList</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+ <span class="k">print</span> <span class="s2">&quot;Your search resulted in&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">listCities</span><span class="p">),</span> <span class="s2">&quot;cities with the name </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">city</span>
+
+ <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">listCities</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+         <span class="k">print</span> <span class="s2">&quot;Please refine your search and choose the ID relevant to the country&quot;</span>
+     <span class="k">for</span> <span class="n">listCity</span> <span class="ow">in</span> <span class="n">listCities</span><span class="p">:</span>
+             <span class="k">print</span> <span class="s2">&quot;Country: </span><span class="si">%s</span><span class="s2">, &quot;</span> <span class="o">%</span> <span class="n">listCity</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">],</span> <span class="s2">&quot;ID: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">listCity</span><span class="p">[</span><span class="s1">&#39;_id&#39;</span><span class="p">]</span>
+     <span class="n">cityID</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;Enter the relevant ID: &quot;</span><span class="p">)</span>
+     <span class="k">print</span> <span class="s2">&quot;You have entered </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">cityID</span>
+
+ <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">listCities</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+     <span class="n">cityID</span> <span class="o">=</span> <span class="n">listCities</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;_id&#39;</span><span class="p">]</span>
+     <span class="k">print</span> <span class="s2">&quot;Country:&quot;</span><span class="p">,</span> <span class="n">listCities</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;country&#39;</span><span class="p">]</span>
+
+ <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">listCities</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+     <span class="k">print</span> <span class="s2">&quot;Your city does not exist&quot;</span>
+     <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+ <span class="k">return</span> <span class="n">cityID</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">city</span><span class="p">()</span>
+<span class="n">locationID</span> <span class="o">=</span> <span class="n">citysearch</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">city</span> <span class="n">name</span><span class="p">:</span> <span class="n">London</span>
+<span class="n">Retrieving</span> <span class="n">weather</span> <span class="n">information</span> <span class="k">for</span> <span class="n">london</span> <span class="o">.....</span>
+<span class="n">Your</span> <span class="n">search</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="mi">7</span> <span class="n">cities</span> <span class="k">with</span> <span class="n">the</span> <span class="n">name</span> <span class="n">london</span>
+<span class="n">Please</span> <span class="n">refine</span> <span class="n">your</span> <span class="n">search</span> <span class="ow">and</span> <span class="n">choose</span> <span class="n">the</span> <span class="n">ID</span> <span class="n">relevant</span> <span class="n">to</span> <span class="n">the</span> <span class="n">country</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">GB</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">2643743</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">US</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">5056033</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">CA</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">6058560</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">US</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">4119617</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">US</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">4298960</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">US</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">4517009</span>
+<span class="n">Country</span><span class="p">:</span> <span class="n">US</span><span class="p">,</span>  <span class="n">ID</span><span class="p">:</span> <span class="mi">5367815</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">relevant</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">2643743</span>
+<span class="n">You</span> <span class="n">have</span> <span class="n">entered</span> <span class="mi">2643743</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">apikey</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span>
+<span class="n">serviceUrl</span> <span class="o">=</span> <span class="s2">&quot;http://api.openweathermap.org/data/2.5/weather?&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">serviceUrl</span> <span class="o">+</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">locationID</span><span class="p">,</span> <span class="s1">&#39;APPID&#39;</span><span class="p">:</span> <span class="n">apikey</span><span class="p">})</span>
+<span class="n">urlRead</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">dataJSON</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">urlRead</span><span class="p">)</span>
+</pre></div>
+<p>After obtaining a valid API key, please replace <cite>xxx...</cite> with the valid one for <cite>apikey</cite> variable</p>
+<div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mf">273.0</span>
+<span class="n">tempMax</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp_max&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mf">273.0</span>
+<span class="n">tempMin</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;temp_min&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mf">273.0</span>
+<span class="n">humidity</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">][</span><span class="s1">&#39;humidity&#39;</span><span class="p">])</span>
+<span class="n">wind</span> <span class="o">=</span> <span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">]</span>
+<span class="n">windSpeed</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">][</span><span class="s1">&#39;speed&#39;</span><span class="p">])</span>
+<span class="n">condition</span> <span class="o">=</span> <span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">]</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;*******************&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;--Weather Summary--&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;*******************&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;Current Temperature: </span><span class="si">%.2f</span><span class="s2"> C&quot;</span> <span class="o">%</span> <span class="n">temp</span>
+<span class="k">print</span> <span class="s2">&quot;Maximum Temperature: </span><span class="si">%.2f</span><span class="s2"> C&quot;</span> <span class="o">%</span> <span class="n">tempMax</span>
+<span class="k">print</span> <span class="s2">&quot;Minimum Temperature: </span><span class="si">%.2f</span><span class="s2"> C&quot;</span> <span class="o">%</span> <span class="n">tempMin</span>
+<span class="k">print</span> <span class="s2">&quot;Humidity: </span><span class="si">%d</span><span class="s2"> </span><span class="si">%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">humidity</span>
+
+<span class="k">if</span> <span class="s1">&#39;gust&#39;</span> <span class="ow">in</span> <span class="n">wind</span><span class="p">:</span>
+    <span class="n">windGust</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataJSON</span><span class="p">[</span><span class="s1">&#39;wind&#39;</span><span class="p">][</span><span class="s1">&#39;gust&#39;</span><span class="p">])</span>
+    <span class="k">print</span> <span class="s2">&quot;Wind Gust:</span><span class="si">%s</span><span class="s2"> km/hr&quot;</span> <span class="o">%</span> <span class="n">windGust</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s2">&quot;Wind Gust: Data not available&quot;</span>
+
+<span class="k">print</span> <span class="s2">&quot;Wind Speed: </span><span class="si">%.2f</span><span class="s2"> km/hr&quot;</span> <span class="o">%</span> <span class="n">windSpeed</span>
+<span class="k">print</span> <span class="s2">&quot;Condition: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">condition</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="o">*******************</span>
+<span class="o">--</span><span class="n">Weather</span> <span class="n">Summary</span><span class="o">--</span>
+<span class="o">*******************</span>
+<span class="n">Current</span> <span class="n">Temperature</span><span class="p">:</span> <span class="mf">5.53</span> <span class="n">C</span>
+<span class="n">Maximum</span> <span class="n">Temperature</span><span class="p">:</span> <span class="mf">7.15</span> <span class="n">C</span>
+<span class="n">Minimum</span> <span class="n">Temperature</span><span class="p">:</span> <span class="mf">4.15</span> <span class="n">C</span>
+<span class="n">Humidity</span><span class="p">:</span> <span class="mi">81</span> <span class="o">%</span>
+<span class="n">Wind</span> <span class="n">Gust</span><span class="p">:</span> <span class="n">Data</span> <span class="ow">not</span> <span class="n">available</span>
+<span class="n">Wind</span> <span class="n">Speed</span><span class="p">:</span> <span class="mf">5.10</span> <span class="n">km</span><span class="o">/</span><span class="n">hr</span>
+<span class="n">Condition</span><span class="p">:</span> <span class="n">Sky</span> <span class="ow">is</span> <span class="n">Clear</span>
+</pre></div>
+</div>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://deepakramanath.github.io/tag/python.html">python</a>
+      <a href="https://deepakramanath.github.io/tag/json.html">JSON</a>
+      <a href="https://deepakramanath.github.io/tag/openweather.html">OpenWeather</a>
+      <a href="https://deepakramanath.github.io/tag/api.html">API</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2018</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Deepak Ramanath ",
+  "url" : "https://deepakramanath.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>

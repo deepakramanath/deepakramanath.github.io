@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://deepakramanath.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Deepak Ramanath Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Deepak Ramanath" />
+<meta name="description" content="A simple encryption is carried out over a string using Caesar encryption method in Python. Click Continue reading to know more." />
+<meta name="keywords" content="python, encryption">
+
+<meta property="og:site_name" content="Deepak Ramanath"/>
+<meta property="og:title" content=""/>
+<meta property="og:description" content="A simple encryption is carried out over a string using Caesar encryption method in Python. Click Continue reading to know more."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://deepakramanath.github.io/Prime Caesar Encryption.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-10-26 21:00:00+11:00"/>
+<meta property="article:modified_time" content="2016-10-26 21:00:00+11:00"/>
+<meta property="article:author" content="https://deepakramanath.github.io/author/deepak-ramanath.html">
+<meta property="article:section" content="Python Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="encryption"/>
+<meta property="og:image" content="">
+
+  <title>Deepak Ramanath &ndash; </title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://deepakramanath.github.io">
+        <img src="https://deepakramanath.github.io/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://deepakramanath.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="https://deepakramanath.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://deepakramanath.github.io/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="#" target="_blank">Python | Linux | Ansible</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://au.linkedin.com/in/deepakramanath" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/deepakramanath" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/deepakramanath" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/deepakramanath" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://deepakramanath.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://deepakramanath.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="Prime Caesar Encryption"></h1>
+    <p>
+          Posted on Wed 26 October 2016 in <a href="https://deepakramanath.github.io/category/python-projects.html">Python Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <div class="section" id="caesar-encryption-using-python">
+<h2>Caesar encryption using Python</h2>
+<p>This project can be found at the <a class="reference external" href="https://github.com/deepakramanath/Python-Caesar-Encryption">GitHub</a> repository, including the <a class="reference external" href="http://nbviewer.jupyter.org/github/deepakramanath/Python-Caesar-Encryption/blob/master/Python-Caesar-encryption.ipynb">IPython</a> notebook.</p>
+<p>In this program, we look at creating Caesar encryption for letters and numbers. A Caesar shift of 3 is used in this program. What this means is, for example, if we provide character <strong>C</strong>, the encrypter character would be <strong>A</strong>. Similarly, for <strong>F</strong>, the encrypted character would be <strong>C</strong>. More information about this simple encryption technique is <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">provided in this link</a>.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">exit</span>
+</pre></div>
+<p>Here, we import the module <cite>string</cite>. The <cite>string</cite> module has a number of constants and classes which can be used to obtain the required ASCII characters. In this case, we require lower and upper case English characters to compare the user provided string and subsequently get the index of the alphabets. For example, the index of <strong>A</strong> woulld be <cite>0</cite>, likewise, <strong>B</strong> and <strong>C</strong> would be <cite>1</cite> and <cite>2</cite> respectively.</p>
+<div class="highlight"><pre><span></span><span class="n">baseAlphabetsLower</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+<span class="n">baseAlphabetsUpper</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+<span class="n">baseNumbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">finalString</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<p>We store the upper case and lower case string constants in the two variables, <cite>baseAlphabetsLower</cite> and <cite>baseAlphabetsUpper</cite> respectively. For numbers, we use the <cite>range</cite> function to get a list from <cite>0</cite> to <cite>9</cite>.</p>
+<div class="highlight"><pre><span></span><span class="n">userString</span> <span class="o">=</span>  <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;Enter your alphanumeric characters: &quot;</span><span class="p">)</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">your</span> <span class="n">alphanumeric</span> <span class="n">characters</span><span class="p">:</span> <span class="n">The</span> <span class="n">quick</span> <span class="n">brown</span> <span class="n">Fox</span> <span class="n">jumps</span> <span class="n">over</span> <span class="n">the</span> <span class="n">lazy</span> <span class="n">Dog</span>
+</pre></div>
+<p>The above line is self-explanatory where in the user input is stored in <cite>userString</cite> variable</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">userString</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">&quot; &quot;</span><span class="p">:</span>
+        <span class="n">finalString</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">baseAlphabetsLower</span><span class="p">:</span>
+            <span class="n">charIndexLower</span> <span class="o">=</span> <span class="n">baseAlphabetsLower</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">finalString</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baseAlphabetsLower</span><span class="p">[</span><span class="n">charIndexLower</span> <span class="o">-</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">baseAlphabetsUpper</span><span class="p">:</span>
+            <span class="n">charIndexUpper</span> <span class="o">=</span> <span class="n">baseAlphabetsUpper</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">finalString</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baseAlphabetsUpper</span><span class="p">[</span><span class="n">charIndexUpper</span> <span class="o">-</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">numIndex</span> <span class="o">=</span> <span class="n">baseNumbers</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">char</span><span class="p">))</span>
+            <span class="n">finalString</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">baseNumbers</span><span class="p">[</span><span class="n">numIndex</span> <span class="o">-</span> <span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+<p>The lines shown above is where the left shift of 3 happens to every character and number the user provides. We first iterate through the characters and based on upper/lower case or number, <cite>if</cite> <cite>else</cite> statements are used to divert these apply the Caesar shift of 3 towards the left. The shifted characters are then appended to a <cite>finalString</cite> variable.</p>
+<div class="highlight"><pre><span></span><span class="n">encryptedString</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">finalString</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Your encrypted characters: &quot;</span><span class="p">,</span> <span class="n">encryptedString</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">encrypted</span> <span class="n">characters</span><span class="p">:</span>  <span class="n">Qeb</span> <span class="n">nrfzh</span> <span class="n">yoltk</span> <span class="n">Clu</span> <span class="n">grjmp</span> <span class="n">lsbo</span> <span class="n">qeb</span> <span class="n">ixwv</span> <span class="n">Ald</span>
+</pre></div>
+<p>Finally, we join the <cite>finalString</cite> list to get the encrypted characters. Note this works for with and without space in the string provided by the user. We can verify the result from the <a class="reference external" href="https://en.wikipedia.org/wiki/Caesar_cipher">wiki link here</a></p>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://deepakramanath.github.io/tag/python.html">python</a>
+      <a href="https://deepakramanath.github.io/tag/encryption.html">encryption</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2018</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Deepak Ramanath ",
+  "url" : "https://deepakramanath.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
