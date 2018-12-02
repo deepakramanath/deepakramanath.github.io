@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://deepakramanath.github.io/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://deepakramanath.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Deepak Ramanath Atom">
+
+
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Deepak Ramanath" />
+<meta name="description" content="A brief instruction about getting started with Pelican, a static web generator is discussed here. Pelican can be then be hosted on GitHub as a repository. Pelican content can be in many formats including the popular ones, reStructutedText or Markdown which makes an ideal choice for writing articles, in particular, blog posts." />
+<meta name="keywords" content="python, pelican, static, web">
+
+<meta property="og:site_name" content="Deepak Ramanath"/>
+<meta property="og:title" content="Pelican Static Web Generation"/>
+<meta property="og:description" content="A brief instruction about getting started with Pelican, a static web generator is discussed here. Pelican can be then be hosted on GitHub as a repository. Pelican content can be in many formats including the popular ones, reStructutedText or Markdown which makes an ideal choice for writing articles, in particular, blog posts."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://deepakramanath.github.io/Pelican Static Web Generation.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-12-02 22:00:00+11:00"/>
+<meta property="article:modified_time" content="2018-12-02 22:00:00+11:00"/>
+<meta property="article:author" content="https://deepakramanath.github.io/author/deepak-ramanath.html">
+<meta property="article:section" content="Python Projects"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="article:tag" content="static"/>
+<meta property="article:tag" content="web"/>
+<meta property="og:image" content="https://secure.gravatar.com/avatar/e8607f9c9807350417679eff58ad56c4">
+
+  <title>Deepak Ramanath &ndash; Pelican Static Web Generation</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://deepakramanath.github.io">
+        <img src="https://secure.gravatar.com/avatar/e8607f9c9807350417679eff58ad56c4" alt="" title="">
+      </a>
+      <h1><a href="https://deepakramanath.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="https://deepakramanath.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://deepakramanath.github.io/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="#" target="_blank">Python | Linux | Ansible</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://au.linkedin.com/in/deepakramanath" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/deepakramanath" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-gitlab" href="https://gitlab.com/deepakramanath" target="_blank"><i class="fa fa-gitlab"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/deepakramanath" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://deepakramanath.github.io">    Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://deepakramanath.github.io/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="Pelican Static Web Generation">Pelican Static Web Generation</h1>
+    <p>
+          Posted on Sun 02 December 2018 in <a href="https://deepakramanath.github.io/category/python-projects.html">Python Projects</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>In the world of static web or site generators, <a class="reference external" href="https://jekyllrb.com/">jekyll</a> and <a class="reference external" href="https://gohugo.io/">Hugo</a> are well know and is an obvious choice for many web developers who are into blogging. <strong>Jekyll</strong> is developed using <a class="reference external" href="https://www.ruby-lang.org/en/">Ruby</a> while <strong>Hugo</strong> is developed using <a class="reference external" href="https://golang.org/">Go</a> and both are open source programming languages. However, <a class="reference external" href="http://docs.getpelican.com/en/stable/index.html">Pelican</a> is relatively new and is gaining popularity due to the fact that it is developed using <a class="reference external" href="https://www.python.org/">Python</a>. There are several features within <strong>Pelican</strong>, most notable is <a class="reference external" href="http://jinja.pocoo.org/">jinja2</a> templating for theme creation. I will allow you to go through other features of <strong>Pelican</strong>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation</h2>
+<p>As recommended by <a class="reference external" href="http://docs.getpelican.com/en/stable/quickstart.html">Pelican docs</a>, <strong>Pelican</strong> can be installed using <cite>pip</cite> as given below in a terminal.</p>
+<div class="highlight"><pre><span></span>sudo pip install pelican
+</pre></div>
+</div>
+<div class="section" id="project-building">
+<h2>Project building</h2>
+<p>It is assumed that a Linux distribution will be used here and therefore all instructions are only relevant to Linux. Firstly, it is recommended to create two repositories on <a class="reference external" href="https://github.com">GitHub</a>, one for the complete source of the Pelican project and the second one for the HTML files that renders the site. Following are these two repositories mentioned</p>
+<div class="highlight"><pre><span></span>https://github.com/deepakramanath/pelican-site.github.io
+https://github.com/deepakramanath/pelican-site-src
+</pre></div>
+<p>Once the above repositories are created on <strong>GitHub</strong>, let us clone the <cite>pelican-site-src</cite> repository into our project directory, which would be <cite>**pelican-project**</cite></p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/
+
+git clone https://github.com/deepakramanath/pelican-site-src.git pelican-project
+Cloning into <span class="s1">&#39;pelican-project&#39;</span>...
+remote: Enumerating objects: <span class="m">3</span>, <span class="k">done</span>.
+remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">3</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, pack-reused <span class="m">0</span>
+Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+
+<span class="nb">cd</span> ~/pelican-project
+</pre></div>
+<p>Now, we can use <cite>pelican quick start</cite> to initiate a <strong>Pelican</strong> project. This has to be performed within the previously created <cite>pelican-project</cite> directory. Pelican quick start begins with asking a few questions which then sets up the necessary structure and files.</p>
+<div class="highlight"><pre><span></span><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span> <span class="n">v4</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span>
+
+<span class="n">This</span> <span class="n">script</span> <span class="n">will</span> <span class="n">help</span> <span class="n">you</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">Pelican</span><span class="o">-</span><span class="n">based</span> <span class="n">website</span><span class="o">.</span>
+
+<span class="n">Please</span> <span class="n">answer</span> <span class="n">the</span> <span class="n">following</span> <span class="n">questions</span> <span class="n">so</span> <span class="n">this</span> <span class="n">script</span> <span class="n">can</span> <span class="n">generate</span> <span class="n">the</span> <span class="n">files</span> <span class="n">needed</span> <span class="n">by</span> <span class="n">Pelican</span><span class="o">.</span>
+
+
+<span class="o">&gt;</span> <span class="n">Where</span> <span class="n">do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">create</span> <span class="n">your</span> <span class="n">new</span> <span class="n">web</span> <span class="n">site</span><span class="err">?</span> <span class="p">[</span><span class="o">.</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">title</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="err">?</span> <span class="n">Pelican</span> <span class="n">Website</span>
+<span class="o">&gt;</span> <span class="n">Who</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">author</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="err">?</span> <span class="n">Deepak</span> <span class="n">Ramanath</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">default</span> <span class="n">language</span> <span class="n">of</span> <span class="n">this</span> <span class="n">web</span> <span class="n">site</span><span class="err">?</span> <span class="p">[</span><span class="n">en</span><span class="p">]</span> <span class="n">en</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">URL</span> <span class="n">prefix</span><span class="err">?</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>   <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">URL</span> <span class="n">prefix</span><span class="err">?</span> <span class="p">(</span><span class="n">see</span> <span class="n">above</span> <span class="n">example</span><span class="p">;</span> <span class="n">no</span> <span class="n">trailing</span> <span class="n">slash</span><span class="p">)</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pelican</span><span class="o">-</span><span class="n">site</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">article</span> <span class="n">pagination</span><span class="err">?</span> <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">How</span> <span class="n">many</span> <span class="n">articles</span> <span class="n">per</span> <span class="n">page</span> <span class="n">do</span> <span class="n">you</span> <span class="n">want</span><span class="err">?</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">What</span> <span class="ow">is</span> <span class="n">your</span> <span class="n">time</span> <span class="n">zone</span><span class="err">?</span> <span class="p">[</span><span class="n">Europe</span><span class="o">/</span><span class="n">Paris</span><span class="p">]</span> <span class="n">Australia</span><span class="o">/</span><span class="n">Sydney</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">tasks</span><span class="o">.</span><span class="n">py</span><span class="o">/</span><span class="n">Makefile</span> <span class="n">to</span> <span class="n">automate</span> <span class="n">generation</span> <span class="ow">and</span> <span class="n">publishing</span><span class="err">?</span> <span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">FTP</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">SSH</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">Dropbox</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">S3</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">Rackspace</span> <span class="n">Cloud</span> <span class="n">Files</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">n</span>
+<span class="o">&gt;</span> <span class="n">Do</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">upload</span> <span class="n">your</span> <span class="n">website</span> <span class="n">using</span> <span class="n">GitHub</span> <span class="n">Pages</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">y</span>
+<span class="o">&gt;</span> <span class="n">Is</span> <span class="n">this</span> <span class="n">your</span> <span class="n">personal</span> <span class="n">page</span> <span class="p">(</span><span class="n">username</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="p">)</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span> <span class="n">y</span>
+<span class="n">Done</span><span class="o">.</span> <span class="n">Your</span> <span class="n">new</span> <span class="n">project</span> <span class="ow">is</span> <span class="n">available</span> <span class="n">at</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">deepak</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">project</span>
+</pre></div>
+<p>Now, the basic <strong>Pelican</strong> directory structure should be created successfully. Let us list the files and other directories. Assuming that we are still in the pelican-project directory</p>
+<div class="highlight"><pre><span></span>ls
+content  Makefile  output  pelicanconf.py  publishconf.py  tasks.py
+</pre></div>
+<p>Before proceeding any further, the <cite>output</cite> directory should be disabled from getting deleted every time the web-site is built. This behaviour of <strong>Pelican</strong> is not necessarily bad, however, for managing via version control using git, we need the <cite>output</cite> directory intact. It will be apparent shortly the need for this. Open the <cite>publishconf.py</cite> and modify the following using a text editor such as vim and look for the line, <cite>DELETE_OUTPUT_DIRECTORY = True</cite>. <strong>True</strong> should be changed to <strong>False</strong>. Save the file.</p>
+<div class="highlight"><pre><span></span>vim publishconf.py
+
+<span class="nv">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> False
+</pre></div>
+<p>Let us begin by adding a sample article by creating a new file in the <cite>content</cite> directory. The <strong>reStructuredText</strong> format will be used in this example. Enter the contents as shown below and save the file.</p>
+<div class="highlight"><pre><span></span>touch ~/pelican-project/content/first_article.rst
+vim ~/pelican-project/content/first_article.rst
+
+First Article uisng Pelican
+<span class="c1">###########################</span>
+
+:title: First Article using Pelican
+:date: <span class="m">2018</span>-12-02 <span class="m">17</span>:00:00
+:modified: <span class="m">2018</span>-12-02 <span class="m">17</span>:00:00
+:tags: python, JSON, OpenWeather, API
+:category: Python Projects
+:slug: Pelican
+:authors: Deepak Ramanath
+:summary: This is a first article written using **Pelican**, a statci web generator.
+</pre></div>
+<p>Now that we have a sample file, we can run a few <strong>Pelican</strong> specific commands and view the site. These should be executed from the root diretory.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
+make html
+Done: Processed <span class="m">1</span> article, <span class="m">0</span> drafts, <span class="m">0</span> pages, <span class="m">0</span> hidden pages and <span class="m">0</span> draft pages in <span class="m">0</span>.09 seconds.
+
+make serve
+<span class="m">127</span>.0.0.1 - - <span class="o">[</span><span class="m">02</span>/Dec/2018 <span class="m">20</span>:56:35<span class="o">]</span> <span class="s2">&quot;GET /category/python-projects.html HTTP/1.1&quot;</span> <span class="m">200</span> -
+WARNING: Unable to find <span class="sb">`</span>/favicon.ico<span class="sb">`</span> or variations:
+  <span class="p">|</span> /favicon.ico.html
+  <span class="p">|</span> /favicon.ico/index.html
+  <span class="p">|</span> /favicon.ico/
+  <span class="p">|</span> /favicon.ico
+</pre></div>
+<p>Now the site should be accessible on localhost at port 8000. Open a web browser and in the address bar type</p>
+<div class="highlight"><pre><span></span>http://localhost:8000
+</pre></div>
+<p>Given that your site is up and running, its time to add further articles into the content directory. Refer <a class="reference external" href="http://docs.getpelican.com/en/stable/index.html">Pelican Documentation</a> for different types of content that can be added.</p>
+</div>
+<div class="section" id="publishing-the-project">
+<h2>Publishing the project</h2>
+<p>Once the content is added, we can make use of <cite>publish</cite> within Pelican so that the content is ready to be published. In the terminal, navigate to root directory</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
+make publish
+</pre></div>
+<p>At this stage, the contents of the <cite>output</cite> directory can be hosted on <strong>GitHub</strong>. In the begining of this article two github repositories were created and the source repository was cloned to the project directory. Now, we use the <strong>git</strong> <strong>sub-module</strong> to clone the output directory. But first, let us delete the <strong>output</strong> directory before using git sub-module to clone.</p>
+<p>Navigate to the root directory</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
+rm -rf output
+
+git submodule add https://github.com/deepakramanath/pelican-site.github.io.git output
+Cloning into <span class="s1">&#39;~/pelican-project/output&#39;</span>...
+remote: Enumerating objects: <span class="m">3</span>, <span class="k">done</span>.
+remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">2</span>/2<span class="o">)</span>, <span class="k">done</span>.
+Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3</span>/3<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">3</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, pack-reused <span class="m">0</span>
+</pre></div>
+<p>Now that the output directory has been clone. We can regenerate the contents within the output directory.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
+make html
+make publish
+</pre></div>
+<p>Time to commit, push and done...</p>
+<p>This part is critical, since we have used git submodule, git tracking should occur first on the <strong>output</strong> directory and then the <strong>root</strong> directory. Remember this direction (inside to outside).</p>
+<p>Further, ensure that <strong>`DELETE_OUTPUT_DIRECTORY = False`</strong> is set in the <strong>`publishconf.py`</strong> file.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project/output
+git add --add
+git commit -m <span class="s2">&quot;My fisrt post commit&quot;</span>
+git push -u origin master
+<span class="m">46</span> files changed, <span class="m">1960</span> insertions<span class="o">(</span>+<span class="o">)</span>
+Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>:
+Password <span class="k">for</span> <span class="s1">&#39;https://deepakramanath@github.com&#39;</span>:
+Enumerating objects: <span class="m">58</span>, <span class="k">done</span>.
+Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">58</span>/58<span class="o">)</span>, <span class="k">done</span>.
+Delta compression using up to <span class="m">8</span> threads
+Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">54</span>/54<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">57</span>/57<span class="o">)</span>, <span class="m">131</span>.41 KiB <span class="p">|</span> <span class="m">10</span>.11 MiB/s, <span class="k">done</span>.
+Total <span class="m">57</span> <span class="o">(</span>delta <span class="m">13</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+remote: Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">13</span>/13<span class="o">)</span>, <span class="k">done</span>.
+To https://github.com/deepakramanath/pelican-site.github.io.git
+6f01234..296789d  master -&gt; master
+Branch <span class="s1">&#39;master&#39;</span> <span class="nb">set</span> up to track remote branch <span class="s1">&#39;master&#39;</span> from <span class="s1">&#39;origin&#39;</span>.
+</pre></div>
+<p>Similarly, the entire root directory should be commited and pushed.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
+git add --add
+git commit -m <span class="s2">&quot;My fisrt source commit&quot;</span>
+git push -u origin master
+<span class="m">9</span> files changed, <span class="m">245</span> insertions<span class="o">(</span>+<span class="o">)</span>
+Username <span class="k">for</span> <span class="s1">&#39;https://github.com&#39;</span>: deepakramanath
+Password <span class="k">for</span> <span class="s1">&#39;https://deepakramanath@github.com&#39;</span>:
+Enumerating objects: <span class="m">12</span>, <span class="k">done</span>.
+Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">12</span>/12<span class="o">)</span>, <span class="k">done</span>.
+Delta compression using up to <span class="m">8</span> threads
+Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">10</span>/10<span class="o">)</span>, <span class="k">done</span>.
+Writing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">11</span>/11<span class="o">)</span>, <span class="m">4</span>.38 KiB <span class="p">|</span> <span class="m">1</span>.46 MiB/s, <span class="k">done</span>.
+Total <span class="m">11</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta <span class="m">0</span><span class="o">)</span>
+To https://github.com/deepakramanath/pelican-site-src.git
+b98e161..ca21f73  master -&gt; master
+Branch <span class="s1">&#39;master&#39;</span> <span class="nb">set</span> up to track remote branch <span class="s1">&#39;master&#39;</span> from <span class="s1">&#39;origin&#39;</span>.
+</pre></div>
+<p>The site should now be accessible over</p>
+<div class="highlight"><pre><span></span>https://pelican-site.github.io/
+</pre></div>
+</div>
+
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://deepakramanath.github.io/tag/python.html">python</a>
+      <a href="https://deepakramanath.github.io/tag/pelican.html">pelican</a>
+      <a href="https://deepakramanath.github.io/tag/static.html">static</a>
+      <a href="https://deepakramanath.github.io/tag/web.html">web</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  2018</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Deepak Ramanath ",
+  "url" : "https://deepakramanath.github.io",
+  "image": "https://secure.gravatar.com/avatar/e8607f9c9807350417679eff58ad56c4",
+  "description": ""
+}
+</script>
+
+</body>
+</html>
