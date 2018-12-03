@@ -126,7 +126,7 @@
 <div class="highlight"><pre><span></span>https://github.com/deepakramanath/pelican-site.github.io
 https://github.com/deepakramanath/pelican-site-src
 </pre></div>
-<p>Once the above repositories are created on <strong>GitHub</strong>, let us clone the <cite>pelican-site-src</cite> repository into our project directory, which would be <cite>**pelican-project**</cite></p>
+<p>Once the above repositories are created on <strong>GitHub</strong>, let us clone the <cite>pelican-site-src</cite> repository into our project directory, which would be <strong>pelican-project</strong></p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ~/
 
 git clone https://github.com/deepakramanath/pelican-site-src.git pelican-project
@@ -239,7 +239,7 @@ make publish
 <p>This part is critical, since we have used git submodule, git tracking should occur first on the <strong>output</strong> directory and then the <strong>root</strong> directory. Remember this direction (inside to outside).</p>
 <p>Further, ensure that <strong>`DELETE_OUTPUT_DIRECTORY = False`</strong> is set in the <strong>`publishconf.py`</strong> file.</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project/output
-git add --add
+git add --all
 git commit -m <span class="s2">&quot;My fisrt post commit&quot;</span>
 git push -u origin master
 <span class="m">46</span> files changed, <span class="m">1960</span> insertions<span class="o">(</span>+<span class="o">)</span>
@@ -258,7 +258,7 @@ Branch <span class="s1">&#39;master&#39;</span> <span class="nb">set</span> up t
 </pre></div>
 <p>Similarly, the entire root directory should be commited and pushed.</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pelican-project
-git add --add
+git add --all
 git commit -m <span class="s2">&quot;My fisrt source commit&quot;</span>
 git push -u origin master
 <span class="m">9</span> files changed, <span class="m">245</span> insertions<span class="o">(</span>+<span class="o">)</span>
